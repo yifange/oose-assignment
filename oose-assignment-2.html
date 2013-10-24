@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>oose-assignment-2</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/default.css" />
+<script type="text/javascript" src="https://stackedit.io/libs/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 class="wmd-title" id="oose-assignment">OOSE Assignment 2</h1>
+
+<h4 class="wmd-title" id="use-cases">1. Use cases</h4>
+
+<h5 class="wmd-title" id="title"><strong>Title</strong></h5>
+
+<p>Selecting a piece</p>
+
+<h5 class="wmd-title" id="actors"><strong>Actors</strong></h5>
+
+<p>The current player</p>
+
+<h5 class="wmd-title" id="pre-condition"><strong>Pre-condition</strong></h5>
+
+<p>The game has not ended.</p>
+
+<h5 class="wmd-title" id="main-path"><strong>Main path</strong></h5>
+
+<ol>
+<li>The player clicks on one of the Brickus pieces on the bottom pane of the game window.</li>
+<li>The piece clicked is highlighted. After a piece is selected, when the player’s mouse cursor enters the game board, the cursor becomes the piece selected.</li>
+</ol>
+
+<hr>
+
+<h5 class="wmd-title" id="title-1"><strong>Title</strong></h5>
+
+<p>Rotating a piece</p>
+
+<h5 class="wmd-title" id="actors-1"><strong>Actors</strong></h5>
+
+<p>The current player</p>
+
+<h5 class="wmd-title" id="pre-condition-1"><strong>Pre-condition</strong></h5>
+
+<p>The game has not ended. The player has selected a piece</p>
+
+<h5 class="wmd-title" id="main-path-1"><strong>Main path</strong></h5>
+
+<ol>
+<li>The player rotates the mouse wheel in the up/down direction by 1 unit</li>
+<li>The piece selected rotates clockwisely/counter-clockwisely by 90 degrees.</li>
+<li>The selected piece in the bottom pane of the game window and the piece representing the mouse cursor in the game board update their graphics when the player rotates the piece. </li>
+</ol>
+
+<hr>
+
+<h5 class="wmd-title" id="title-2"><strong>Title</strong></h5>
+
+<p>Flipping a piece</p>
+
+<h5 class="wmd-title" id="actors-2"><strong>Actors</strong></h5>
+
+<p>The current player</p>
+
+<h5 class="wmd-title" id="pre-condition-2"><strong>Pre-condition</strong></h5>
+
+<p>The game has not ended. The player has selected a piece</p>
+
+<h5 class="wmd-title" id="main-path-2"><strong>Main path</strong></h5>
+
+<ol>
+<li>The player clicks the mouse’s right button, the piece selected flips horizontally; if the player clicks the mouse’s right button while holding the shift key, the piece selected flips vertically.</li>
+<li>The selected piece in the bottom pane of the game window and the piece representing the mouse cursor in the game board update their graphics when the player flips the piece. </li>
+</ol>
+
+<hr>
+
+<h5 class="wmd-title" id="title-3"><strong>Title</strong></h5>
+
+<p>Skipping the turn</p>
+
+<h5 class="wmd-title" id="actors-3"><strong>Actors</strong></h5>
+
+<p>The current player</p>
+
+<h5 class="wmd-title" id="pre-condition-3"><strong>Pre-condition</strong></h5>
+
+<p>The game has not ended.</p>
+
+<h5 class="wmd-title" id="main-path-3"><strong>Main path</strong></h5>
+
+<ol>
+<li>During a player’s turn, the player can click the “pass” button.   </li>
+<li>If the opponent just ended his/her turn by placing a piece, the current player’s turn ends. The pieces in the bottom pane are replaced by the remaining pieces of the other player and no piece is highlighted in the pane and the mouse cursor does not show the shape of any piece. </li>
+</ol>
+
+<h5 class="wmd-title" id="alternative-path"><strong>Alternative path</strong></h5>
+
+<p>2.1. If the opponent just clicked "pass" to skip his/her turn, the game ends. The bottom pane of the remaining pieces is removed from the window, the "pass" button is disabled, and the cursor does not show the shape of any piece. If the two players have the same score, the status bar shows the message "Game over. Game tied."; if the two player have different scores, the status bar shows "Game over. The winner is Player 1" if player 1
+has higher score and vice versa.</p>
+
+<hr>
+
+<h5 class="wmd-title" id="title-4"><strong>Title</strong></h5>
+
+<p>Placing a piece</p>
+
+<h5 class="wmd-title" id="actors-4"><strong>Actors</strong></h5>
+
+<p>The current player</p>
+
+<h5 class="wmd-title" id="pre-condition-4"><strong>Pre-condition</strong></h5>
+
+<p>The player has selected a piece</p>
+
+<h5 class="wmd-title" id="main-path-4"><strong>Main path</strong></h5>
+
+<ol>
+<li>The player can rotate and flip the selected piece or select another piece or choose to skip the turn at any time before his/her turn ends.  </li>
+<li>The player moves the mouse cursor to the position that he/she wants the piece to be placed.</li>
+<li>The player clicks the left mouse button.</li>
+<li>If the rules of Brickus allows this move, the piece is shown on the position the player chooses and disappears from the bottom pane of the window. The player’s score on the status bar updates according to the number of grids of the placed piece. The pieces in the bottom pane are replaced by the remaining pieces of the other player and no piece is highlighted in the pane and the mouse cursor does not show the shape of any piece. The current player’s turn ends.</li>
+</ol>
+
+<h5 class="wmd-title" id="alternative-path-1"><strong>Alternative path</strong></h5>
+
+<p>4.1. If the rules of Brickus do not allow this move, the player cannot place the piece on the board and the status bar shows the message explaining why this move is invalid. The player needs to continue to place a piece or skip the turn.  </p>
+
+<h4 class="wmd-title" id="state-diagram">2. State diagram</h4>
+
+<p><img src="https://raw.github.com/yifange/oose-assignment/master/statediagram.png" alt="state-diagram" title=""></p>
+
+<h4 class="wmd-title" id="domain-model">3. Domain model</h4>
+
+<p><img src="https://raw.github.com/yifange/oose-assignment/master/domainmodel.png" alt="domain-model" title=""></p>
+
+<h4 class="wmd-title" id="class-diagram">4. Class diagram</h4>
+
+<p><img src="https://raw.github.com/yifange/oose-assignment/master/classdiagram.png" alt="class-diagram" title=""></p><h4 class="wmd-title" id="software-principles">5. Software principles</h4>
+
+<p>This snippet violated OCP. The <code>ResourceAllocator</code> method is not open for extension. If we want to add in the support for another type of resource, we need to write two more <code>case</code> statements. We can use a factory method here.</p>
+
+<pre class="prettyprint prettyprinted" style=""><code><span class="kwd">abstract</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">ResourceAllocator</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">Object</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">abstract</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> allocate</span><span class="pun">();</span><span class="pln">
+  </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">abstract</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> deallocate</span><span class="pun">();</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">FileResourceAllocator</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">ResourceAllocator</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> allocate</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="kwd">return</span><span class="pln"> allocateNewFileResource</span><span class="pun">();</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> deallocate</span><span class="pun">(</span><span class="typ">Resource</span><span class="pln"> resource</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    releaseFileResource</span><span class="pun">(</span><span class="pln">resource</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">MemoryResourceAllocator</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">ResourceAllocator</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> allocate</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="kwd">return</span><span class="pln"> allocateNewMemoryResource</span><span class="pun">();</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> deallocate</span><span class="pun">(</span><span class="typ">Resource</span><span class="pln"> resource</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    releaseMemoryResource</span><span class="pun">(</span><span class="pln">resource</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">SocketResourceAllocator</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">ResourceAllocator</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> allocate</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="kwd">return</span><span class="pln"> allocateNewSocketResource</span><span class="pun">();</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> deallocate</span><span class="pun">(</span><span class="typ">Resource</span><span class="pln"> resource</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    releaseSocketResource</span><span class="pun">(</span><span class="pln">resource</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<hr>
+
+<p>It violated DRY. The code used to send the text to through all the sockets is repeated for 3 times. Write it in a separate method.</p>
+
+<pre class="prettyprint prettyprinted" style=""><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">ConversationWindow</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">JPanel</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">Socket</span><span class="pun">&gt;</span><span class="pln"> sockets</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">JTextField</span><span class="pln"> messageBox</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">JButton</span><span class="pln"> sendButton</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">JMenuItem</span><span class="pln"> sendMenuItem</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> sendText</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Socket</span><span class="pln"> s </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">sockets</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+          </span><span class="typ">OutputStreamWriter</span><span class="pln"> write </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">OutputStreamWriter</span><span class="pun">(</span><span class="pln">s</span><span class="pun">.</span><span class="pln">getOutputStream</span><span class="pun">());</span><span class="pln">
+          writer</span><span class="pun">.</span><span class="pln">write</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">messageBox</span><span class="pun">.</span><span class="pln">getText</span><span class="pun">());</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Exception</span><span class="pln"> ex</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+          </span><span class="com">/* -- Error Handling -- */</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">ConversationWindow</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">sendMenuItem</span><span class="pun">.</span><span class="pln">addActionListener</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ActionListener</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> actionPerformed</span><span class="pun">(</span><span class="typ">ActionEvent</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+              sendText</span><span class="pun">()</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">});</span><span class="pln">
+
+        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">sendButton</span><span class="pun">.</span><span class="pln">addActionListener</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ActionListener</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> actionPerformed</span><span class="pun">(</span><span class="typ">ActionEvent</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+              sendText</span><span class="pun">()</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">});</span><span class="pln">
+
+        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">messageBox</span><span class="pun">.</span><span class="pln">addKeyListener</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">KeyAdapter</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> keyPressed</span><span class="pun">(</span><span class="typ">KeyEvent</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> e</span><span class="pun">.</span><span class="pln">getKeyCode</span><span class="pun">()</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="typ">KeyEvent</span><span class="pun">.</span><span class="pln">VK_ENTER </span><span class="pun">&amp;&amp;</span><span class="pln"> e</span><span class="pun">.</span><span class="pln">isShiftDown</span><span class="pun">()</span><span class="pln"> </span><span class="pun">)</span><span class="pln">
+                </span><span class="pun">{</span><span class="pln">
+                  sendText</span><span class="pun">();</span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">});</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">                    </span></code></pre>
+
+<hr>
+
+<p>This violates LSP. Even if <code>Set</code> <em>is a</em> <code>MyMultiSet</code>, the <code>count</code> method makes no sense for a set. We’d rather say if the set contains a element than counting the number of the occurrence of the element. So we use delegation instead of inheritance here.</p>
+
+<pre class="prettyprint prettyprinted" style=""><code><span class="kwd">interface</span><span class="pln"> </span><span class="typ">Countable</span><span class="pun">&lt;</span><span class="pln">T</span><span class="pun">&gt;</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> count</span><span class="pun">(</span><span class="pln">T v</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">interface</span><span class="pln"> </span><span class="typ">Collection</span><span class="pun">&lt;</span><span class="pln">T</span><span class="pun">&gt;</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> add</span><span class="pun">(</span><span class="pln">T v</span><span class="pun">);</span><span class="pln">
+  </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> remove</span><span class="pun">(</span><span class="pln">T v</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">MyMultiSet</span><span class="pln"> </span><span class="kwd">implements</span><span class="pln"> </span><span class="typ">Countable</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Collection</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+   </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">List</span><span class="pun">&lt;</span><span class="pln">T</span><span class="pun">&gt;</span><span class="pln"> data</span><span class="pun">;</span><span class="pln">
+   </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">MyMultiSet</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+     data </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">LinkedList</span><span class="pun">&lt;</span><span class="pln">T</span><span class="pun">&gt;();</span><span class="pln">
+   </span><span class="pun">}</span><span class="pln">
+   </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> count</span><span class="pun">(</span><span class="pln">T v</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+       </span><span class="kwd">int</span><span class="pln"> c </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+       </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">T i </span><span class="pun">:</span><span class="pln"> data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+           </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">v</span><span class="pun">.</span><span class="pln">equals</span><span class="pun">(</span><span class="pln">i</span><span class="pun">))</span><span class="pln"> c</span><span class="pun">++</span><span class="pln"> </span><span class="pun">;</span><span class="pln">
+       </span><span class="pun">}</span><span class="pln">
+       </span><span class="kwd">return</span><span class="pln"> c</span><span class="pun">;</span><span class="pln">
+   </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Set</span><span class="pln"> </span><span class="kwd">implements</span><span class="pln"> </span><span class="typ">Collection</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">MyMultiSet</span><span class="pln"> multiSet</span><span class="pun">;</span><span class="pln">
+  </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">Set</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    multiset </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">MyMultiSet</span><span class="pun">();</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> add</span><span class="pun">(</span><span class="pln">T v</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">contains</span><span class="pun">(</span><span class="pln">v</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      multiset</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">v</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> contains</span><span class="pun">(</span><span class="pln">T v</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> multiSet</span><span class="pun">.</span><span class="pln">count</span><span class="pun">(</span><span class="pln">v</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> remove</span><span class="pun">(</span><span class="pln">T v</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    data</span><span class="pun">.</span><span class="pln">remove</span><span class="pun">(</span><span class="pln">v</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<hr>
+
+<p>This piece of code violates SRP and OCP. The <code>User</code> class should not take care of sending the emails. And the constructor should be <code>protected</code> or <code>private</code> as the <code>User</code> class is using a factory method to create an object.</p>
+
+<pre class="prettyprint prettyprinted" style=""><code><span class="kwd">class</span><span class="pln"> </span><span class="typ">Mailer</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="com">/* Send a verification mail to the user provided address */</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> sendVerificationEmail</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> name</span><span class="pun">,</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> email</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="com">/*-- Code here --*/</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="com">/* Send a welcome mail to the user once verified */</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> sendWelcomeEmail</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> name</span><span class="pun">,</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> email</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="com">/*-- Code here --*/</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">User</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> name</span><span class="pun">,</span><span class="pln"> address</span><span class="pun">,</span><span class="pln"> email </span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">boolean</span><span class="pln"> registered</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">Mailer</span><span class="pln"> mailer</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">protected</span><span class="pln"> </span><span class="typ">User</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> name</span><span class="pun">,</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> address</span><span class="pun">,</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> email</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">name </span><span class="pun">=</span><span class="pln"> name</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">address </span><span class="pun">=</span><span class="pln"> address</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">email </span><span class="pun">=</span><span class="pln"> email</span><span class="pun">;</span><span class="pln">
+
+        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">registered </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">mailer </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Mailer</span><span class="pun">();</span><span class="pln">
+        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">mailer</span><span class="pun">.</span><span class="pln">sendVerificationEmail</span><span class="pun">(</span><span class="pln">name</span><span class="pun">,</span><span class="pln"> email</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> setRegistered</span><span class="pun">(</span><span class="kwd">boolean</span><span class="pln"> registered</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">registered </span><span class="pun">=</span><span class="pln"> registered</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">registered</span><span class="pun">)</span><span class="pln">
+          mailer</span><span class="pun">.</span><span class="pln">sendWelcomeEmail</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">name</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">email</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="com">/* Create a new User */</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="typ">User</span><span class="pln"> createUser</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> name</span><span class="pun">,</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> address</span><span class="pun">,</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> email</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">User</span><span class="pun">(</span><span class="pln">name</span><span class="pun">,</span><span class="pln"> address</span><span class="pun">,</span><span class="pln"> email</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="com">/*-- Other Code */</span><span class="pln">
+</span><span class="pun">}</span></code></pre></div></body>
+</html>
