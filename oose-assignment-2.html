@@ -8,7 +8,7 @@
 </head>
 <body><div class="container"><h1 class="wmd-title" id="oose-assignment">OOSE Assignment 2</h1>
 
-<h4 class="wmd-title" id="use-cases">1. Use cases</h4>
+<h3 class="wmd-title" id="use-cases">1. Use cases</h3>
 
 <h5 class="wmd-title" id="title"><strong>Title</strong></h5>
 
@@ -125,17 +125,19 @@ has higher score and vice versa.</p>
 
 <p>4.1. If the rules of Brickus do not allow this move, the player cannot place the piece on the board and the status bar shows the message explaining why this move is invalid. The player needs to continue to place a piece or skip the turn.  </p>
 
-<h4 class="wmd-title" id="state-diagram">2. State diagram</h4>
+<h3 class="wmd-title" id="state-diagram">2. State diagram</h3>
 
-<p><img src="https://raw.github.com/yifange/oose-assignment/master/statediagram.png" alt="state-diagram" title=""></p>
+<p><img src="statediagram.png" alt="state-diagram" title=""></p>
 
-<h4 class="wmd-title" id="domain-model">3. Domain model</h4>
+<h3 class="wmd-title" id="domain-model">3. Domain model</h3>
 
-<p><img src="https://raw.github.com/yifange/oose-assignment/master/domainmodel.png" alt="domain-model" title=""></p>
+<p><img src="domainmodel.png" alt="domain-model" title=""></p>
 
-<h4 class="wmd-title" id="class-diagram">4. Class diagram</h4>
+<h3 class="wmd-title" id="class-diagram">4. Class diagram</h3>
 
-<p><img src="https://raw.github.com/yifange/oose-assignment/master/classdiagram.png" alt="class-diagram" title=""></p><h4 class="wmd-title" id="software-principles">5. Software principles</h4>
+<p><img src="classdiagram.png" alt="class-diagram" title=""></p>
+
+<h3 class="wmd-title" id="software-principles">5. Software principles</h3>
 
 <p>This snippet violated OCP. The <code>ResourceAllocator</code> method is not open for extension. If we want to add in the support for another type of resource, we need to write two more <code>case</code> statements. We can use a factory method here.</p>
 
